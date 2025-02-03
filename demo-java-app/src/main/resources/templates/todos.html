@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Todos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold mb-4">Todos</h1>
+        <a href="/todos/create" class="bg-blue-500 text-white px-4 py-2 rounded">Create New Todo</a>
+        <ul class="mt-4">
+            <li th:each="todo : ${todos}" class="bg-white p-4 rounded shadow mb-4">
+                <span class="font-bold" th:text="${todo.title}">Title</span> - <span th:text="${todo.description}">Description</span>
+                <a th:href="@{/todos/edit/{id}(id=${todo.id})}" class="text-blue-500 ml-4">Edit</a>
+                <a th:href="@{/todos/delete/{id}(id=${todo.id})}" class="text-red-500 ml-2">Delete</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

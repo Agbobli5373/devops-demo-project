@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Todo</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold mb-4">Todo</h1>
+        <p class="mb-2">Title: <span class="font-bold" th:text="${todo.title}">Title</span></p>
+        <p class="mb-4">Description: <span th:text="${todo.description}">Description</span></p>
+        <a href="/todos" class="bg-blue-500 text-white px-4 py-2 rounded">Back to Todos</a>
+    </div>
+</body>
+</html>
